@@ -123,3 +123,83 @@ first
 modify column ... ;
 
 drop column ... ;
+
+### レコードの追加
+
+insert into データベース名.テーブル名(属性１, 属性２) values(値１, 値２);
+
+#### 複数行
+
+insert into データベース名.テーブル名(属性１, 属性２) values(値１, 値２),
+values(値１, 値２),
+values(値１, 値２);
+
+### レコードの取得
+
+select 取得したい属性 [as label] from テーブル名 [as alias];
+
+##### 取得したい属性
+
+*: 全ての属性を取得
+
+count(*): レコード件数を取得
+
+distinct: 重複レコードを省く
+
+as: 列ラベルの変更（asは省略可能）
+
+### レコードの削除
+
+delete from テーブル名;
+
+### auto_incrementの初期化
+
+alter table テーブル名 auto_increment = 1;
+
+### 条件句（where）
+
+select 取得したい属性 [as label] from テーブル名 [as alias]
+
+where id = 1;
+
+##### 非一致
+
+where id != 1;  <>でもOK
+
+##### 数値の比較
+
+> >= < <=
+
+##### A and B A or B
+
+where id = 1 and name = 'jin';
+
+where id = 1 or name = 'jin';
+
+##### like
+
+where name like '店舗%';
+
+##### in, not
+
+where name in ('店舗A', '店舗B'); not
+
+##### between
+
+where score between 50 and 100; 50以上100以下
+
+##### is not null null以外に一致
+
+where score is not null;
+
+whre score is null;
+
+### order by ソート順の決定
+
+order by score asc; 昇順 省略できる
+order by score desc; 降順
+
+### limit offset
+
+limit 2; 2レコード取得
+limit 3 offset 2; 3レコード目から3レコード取得
