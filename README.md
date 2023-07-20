@@ -162,33 +162,33 @@ select 取得したい属性 [as label] from テーブル名 [as alias]
 
 where id = 1;
 
-##### 非一致
+#### 非一致
 
 where id != 1;  <>でもOK
 
-##### 数値の比較
+#### 数値の比較
 
 > >= < <=
 
-##### A and B A or B
+#### A and B A or B
 
 where id = 1 and name = 'jin';
 
 where id = 1 or name = 'jin';
 
-##### like
+#### like
 
 where name like '店舗%';
 
-##### in, not
+#### in, not
 
 where name in ('店舗A', '店舗B'); not
 
-##### between
+#### between
 
 where score between 50 and 100; 50以上100以下
 
-##### is not null null以外に一致
+#### is not null null以外に一致
 
 where score is not null;
 
