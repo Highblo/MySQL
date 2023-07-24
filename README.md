@@ -194,12 +194,30 @@ where score is not null;
 
 whre score is null;
 
-### order by ソート順の決定
+#### order by ソート順の決定
 
 order by score asc; 昇順 省略できる
 order by score desc; 降順
 
-### limit offset
+#### limit offset
 
 limit 2; 2レコード取得
 limit 3 offset 2; 3レコード目から3レコード取得
+
+#### update データの更新
+
+update テーブル名 set 属性=1, ... where 条件
+
+### テーブルの結合
+
+#### inner join（内部結合）
+
+select * from テーブル1
+inner join テーブル2
+on テーブル1.値が一致する属性 = テーブル2.値が一致する属性;
+
+#### outer join
+
+select * from 左テーブル
+left(right) join 右テーブル
+on 左テーブル.値が一致する属性 = 右テーブル.値が一致する属性;
